@@ -7,9 +7,14 @@ export function useShoppingCart() {
 	return useContext(ShoppingCartContext);
 }
 
-export const ShoppingCartProvider = ({ children }) => {
-	const [cartItems, setCartItems] = useState([]);
+export function ShoppingCartProvider({ children }) {
+	const [cartItems, setCartItems] = useState([{ id: 0, quantity: 0 }]);
 	//our cartitems only need an id and a quantity
+
+	const cartQuantity = cartItems.reduce(
+		(quantity, item) => item.quantity + quantity,
+		0
+	);
 
 	function getProductQuantity(id) {
 		return cartItems.find((product) => product.id === id)?.quantity || 0;
@@ -64,11 +69,13 @@ export const ShoppingCartProvider = ({ children }) => {
 				increaseCartQuantity,
 				decreaseCartQuantity,
 				removeFromCart,
+				cartItems,
+				cartQuantity,
 			}}
 		>
 			{children}
 		</ShoppingCartContext.Provider>
 	);
-};
+}
 
 export default ShoppingCartContext;

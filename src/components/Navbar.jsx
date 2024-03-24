@@ -9,9 +9,6 @@ export default function Navbar() {
 				</li>
 
 				<li>
-					<NavLink to="/store">Store</NavLink>
-				</li>
-				<li>
 					<NavLink to="/cart">Cart</NavLink>
 				</li>
 			</ul>

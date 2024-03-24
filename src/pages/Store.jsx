@@ -1,10 +1,14 @@
 import products from "../data/items.json";
 import Product from "../components/Product";
+import ShoppingCart from "../components/ShoppingCart";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function Store() {
+	const { cartQuantity } = useShoppingCart();
 	return (
 		<>
 			<h1>Store</h1>
+
 			<div className="store-container">
 				{products.map((product) => (
 					<Product

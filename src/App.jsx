@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
 import Cart from "./pages/Cart";
 import Store from "./pages/Store";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
@@ -14,9 +14,9 @@ function App() {
 		<ShoppingCartProvider>
 			<Navbar />
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/store" element={<Store />} />
+				<Route path="/" element={<Store />} />
 				<Route path="/cart" element={<Cart />} />
+				<Route path="/checkout" element={<Checkout />} />
 			</Routes>
 		</ShoppingCartProvider>
 	);
