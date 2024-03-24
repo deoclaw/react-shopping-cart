@@ -1,20 +1,24 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import { CartProvider } from "./components/context/CartContext"; //we grab the fxn so its {in curlies}
+import Cart from "./pages/Cart";
+import Store from "./pages/Store";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 // Route to our pages
 function App() {
 	return (
-		<CartProvider>
-			{/* wrap it all in the fxn */}
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Home />} />
-				</Routes>
-			</BrowserRouter>
-		</CartProvider>
+		<ShoppingCartProvider>
+			<Navbar />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/store" element={<Store />} />
+				<Route path="/cart" element={<Cart />} />
+			</Routes>
+		</ShoppingCartProvider>
 	);
 }
 
