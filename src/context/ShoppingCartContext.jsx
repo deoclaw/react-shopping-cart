@@ -8,7 +8,7 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({ children }) {
-	const [cartItems, setCartItems] = useState([{ id: 0, quantity: 0 }]);
+	const [cartItems, setCartItems] = useState([]);
 	//our cartitems only need an id and a quantity
 
 	const cartQuantity = cartItems.reduce(
@@ -62,6 +62,10 @@ export function ShoppingCartProvider({ children }) {
 		});
 	}
 
+	function clearCart() {
+		setCartItems([]);
+	}
+
 	return (
 		<ShoppingCartContext.Provider
 			value={{
@@ -69,6 +73,7 @@ export function ShoppingCartProvider({ children }) {
 				increaseCartQuantity,
 				decreaseCartQuantity,
 				removeFromCart,
+				clearCart,
 				cartItems,
 				cartQuantity,
 			}}

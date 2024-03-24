@@ -5,7 +5,7 @@ export default function Navbar() {
 		<div className="nav-containter">
 			<ul>
 				<li>
-					<NavLink to="/">Home</NavLink>
+					<NavLink to="/">Store</NavLink>
 				</li>
 
 				<li>

@@ -13,6 +13,11 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+ul {
+	margin: 0;
+	padding: 0;
+}
+
 li {
 	list-style: none;
 	display: inline-block;
@@ -110,6 +115,34 @@ button:focus-visible {
 
 .img-div-cntr > img {
 	max-width: 100%;
+}
+
+.checkout-container {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.form {
+	background-color: #535bf2;
+	color: #1a1a1a;
+	padding: 3rem 10rem;
+	border-radius: 10%;
+	flex: 3 600px;
+}
+
+.review-cart {
+	flex: 1 300px;
+}
+
+.form * {
+	display: block;
+	margin: 1rem;
+}
+form {
+	text-align: left;
 }
 
 @media (prefers-color-scheme: light) {

@@ -15,9 +15,7 @@ export default function ShoppingCart() {
 						return total + (item?.price || 0) * cartItem.quantity;
 					}, 0)}
 				</h2>
-				<a href="/checkout" className="checkout">
-					Checkout
-				</a>
+
 				{cartItems.map((item) => (
 					<CartItem key={item.id} {...item} />
 				))}
