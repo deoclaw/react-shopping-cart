@@ -14,7 +14,7 @@ export default function CartItem({ id, quantity }) {
 				<img src={item.image} alt={item.name} />
 			</div>
 			<h2>{item.name}</h2>
-			<h3>{item.price * quantity}</h3>
+			<h3>${item.price * quantity}</h3>
 			{/*  true && expression evaluates to expression */}
 			{quantity > 1 && <h4>x{quantity}</h4>}
 			<button className="danger" onClick={() => removeFromCart(item.id)}>

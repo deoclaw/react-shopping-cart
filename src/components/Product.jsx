@@ -10,6 +10,11 @@ export default function Product({ id, name, image, price, product }) {
 		removeFromCart,
 	} = useShoppingCart();
 
+	let USDollar = new Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: "USD",
+	});
+
 	const quantity = getProductQuantity(id);
 
 	return (
@@ -19,7 +24,7 @@ export default function Product({ id, name, image, price, product }) {
 					<img src={image} alt={name} />
 				</div>
 				<h2>{name}</h2>
-				<h3>${price}</h3>
+				<h3>{USDollar.format(price)}</h3>
 				{quantity === 0 ? (
 					<button onClick={() => increaseCartQuantity(id)}>
 						+ Add to Cart

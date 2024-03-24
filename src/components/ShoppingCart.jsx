@@ -9,10 +9,11 @@ export default function ShoppingCart() {
 		<>
 			<div className="cartContainer" style={{ textAlign: "center" }}>
 				<h2>
-					Total: ${" "}
+					Total:${" "}
 					{cartItems.reduce((total, cartItem) => {
 						const item = products.find((i) => i.id === cartItem.id);
-						return total + (item?.price || 0) * cartItem.quantity;
+						total = total + (item?.price || 0) * cartItem.quantity;
+						return parseFloat(total.toFixed(2));
 					}, 0)}
 				</h2>
 
